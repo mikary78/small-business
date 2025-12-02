@@ -10,10 +10,12 @@
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: #f3f4f6;
+            /* 전체 배경을 아주 연한 파란색 톤으로 변경하여 통일감 부여 */
+            background-color: #f0f7ff;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            /* 로고 색상에 맞춘 더 깊이감 있는 파란색 그라데이션 */
+            background: linear-gradient(135deg, #002060 0%, #0056b3 100%);
         }
         .text-shadow {
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -31,13 +33,22 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background-color: #3b82f6;
+            /* 로고의 밝은 파란색 포인트 컬러 적용 */
+            background-color: #00a3e0;
             border-radius: 2px;
         }
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,32,96,0.1); /* 그림자 색상도 파란색 톤으로 */
         }
+        /* 포인트 컬러 재정의 (Tailwind 커스텀) */
+        .text-brand-blue { color: #0056b3; }
+        .bg-brand-blue { background-color: #0056b3; }
+        .border-brand-blue { border-color: #0056b3; }
+        
+        .text-brand-sky { color: #00a3e0; }
+        .bg-brand-sky { background-color: #00a3e0; }
+
         @media print {
             body { background-color: white; }
             .no-print { display: none; }
@@ -52,12 +63,16 @@
         
         <!-- Header / Slide 1 -->
         <header class="gradient-bg text-white p-10 text-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <!-- 배경 아이콘 오퍼시티 조정하여 로고 강조 -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-5">
                 <i class="fa-solid fa-network-wired text-9xl absolute -top-10 -left-10"></i>
                 <i class="fa-solid fa-vr-cardboard text-9xl absolute bottom-10 right-10"></i>
             </div>
-            <div class="relative z-10">
-                <span class="inline-block bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">제안서 요약</span>
+            <div class="relative z-10 flex flex-col items-center">
+                <!-- 로고 배치 -->
+                <img src="parandurume-logo-2x2.png" alt="파란두루미(주) 로고" class="w-32 md:w-40 mb-6 drop-shadow-lg">
+                
+                <span class="inline-block bg-brand-sky text-white text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm">제안서 요약</span>
                 <h1 class="text-3xl md:text-5xl font-black mb-4 leading-tight text-shadow">
                     광명시 작은도서관,<br>
                     <span class="text-yellow-300">디지털 교육 허브</span>로의 도약
@@ -65,7 +80,7 @@
                 <p class="text-lg md:text-xl font-medium text-blue-100 mb-8">
                     작은도서관협의회와 함께 만드는 XR·AI 프로젝트
                 </p>
-                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-left border border-white/20">
+                <div class="bg-white/10 backdrop-blur-md rounded-lg p-6 text-left border border-white/20 shadow-inner">
                     <h3 class="font-bold text-yellow-300 mb-2"><i class="fa-solid fa-bullseye mr-2"></i>제안 목적</h3>
                     <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
                         <li>작은도서관협의회와의 공동 사업 논의 및 제안</li>
@@ -86,9 +101,10 @@
             <!-- Grid for Context -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <!-- Slide 2 Info -->
-                <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-600 card-hover transition-all duration-300">
+                <!-- 테두리 및 배경색을 브랜드 컬러에 맞게 조정 -->
+                <div class="bg-[#f0f7ff] p-6 rounded-2xl border-l-4 border-brand-blue card-hover transition-all duration-300">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                        <div class="w-12 h-12 bg-[#dbeafe] rounded-full flex items-center justify-center text-brand-blue mr-4">
                             <i class="fa-solid fa-map-location-dot text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold">압도적 접근성</h3>
@@ -97,15 +113,15 @@
                         동네에서 가장 가까운 문화 인프라.<br>
                         경기도는 1,622개관으로 전국 최다 보유 지역입니다.
                     </p>
-                    <div class="bg-white p-3 rounded-lg text-sm text-gray-500">
+                    <div class="bg-white p-3 rounded-lg text-sm text-gray-500 shadow-sm">
                         <span class="font-bold text-red-500">하지만...</span> 인프라는 충분하나 전문인력·예산 부족으로 '내용'과 '활용도'는 아쉬운 상태
                     </div>
                 </div>
 
                 <!-- Slide 3 Info -->
-                <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-600 card-hover transition-all duration-300">
+                <div class="bg-[#f0f7ff] p-6 rounded-2xl border-l-4 border-brand-blue card-hover transition-all duration-300">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4">
+                        <div class="w-12 h-12 bg-[#dbeafe] rounded-full flex items-center justify-center text-brand-blue mr-4">
                             <i class="fa-solid fa-trophy text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold">이미 '최우수' 광명시</h3>
@@ -114,58 +130,60 @@
                         경기도 작은도서관 정책 평가 '최우수' 지자체 선정.<br>
                         40여 개의 도서관 네트워크와 긴밀한 협력 구조 보유.
                     </p>
-                    <div class="bg-white p-3 rounded-lg text-sm text-gray-500">
-                        <span class="font-bold text-blue-600">Next Step:</span> 정책 인프라는 상위권, 이제는 <strong>미래역량 콘텐츠</strong>가 필요할 때
+                    <div class="bg-white p-3 rounded-lg text-sm text-gray-500 shadow-sm">
+                        <span class="font-bold text-brand-blue">Next Step:</span> 정책 인프라는 상위권, 이제는 <strong>미래역량 콘텐츠</strong>가 필요할 때
                     </div>
                 </div>
             </div>
 
             <!-- Slide 4: Current Strengths -->
-            <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+            <div class="bg-white border border-blue-100 rounded-2xl p-6 shadow-sm">
                 <h3 class="text-lg font-bold mb-4 text-center">지금 작은도서관이 잘하는 것 (우리 동네 거실)</h3>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600"><i class="fa-solid fa-book-open mr-2"></i>독서모임</span>
-                    <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600"><i class="fa-solid fa-child mr-2"></i>동화구연</span>
-                    <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600"><i class="fa-solid fa-users mr-2"></i>주민 소모임</span>
-                    <span class="px-4 py-2 bg-gray-100 rounded-full text-gray-600"><i class="fa-solid fa-heart mr-2"></i>마을 공동체 거점</span>
+                    <!-- 태그 배경색을 아주 연한 파란색으로 변경 -->
+                    <span class="px-4 py-2 bg-blue-50 rounded-full text-brand-blue"><i class="fa-solid fa-book-open mr-2"></i>독서모임</span>
+                    <span class="px-4 py-2 bg-blue-50 rounded-full text-brand-blue"><i class="fa-solid fa-child mr-2"></i>동화구연</span>
+                    <span class="px-4 py-2 bg-blue-50 rounded-full text-brand-blue"><i class="fa-solid fa-users mr-2"></i>주민 소모임</span>
+                    <span class="px-4 py-2 bg-blue-50 rounded-full text-brand-blue"><i class="fa-solid fa-heart mr-2"></i>마을 공동체 거점</span>
                 </div>
             </div>
         </section>
 
         <!-- Problem & Needs / Slide 5, 6, 7 -->
-        <section class="bg-gray-800 text-white p-8 md:p-12">
+        <!-- 배경색을 로고의 짙은 파란색으로 변경 -->
+        <section class="bg-[#002060] text-white p-8 md:p-12">
             <div class="text-center mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-2">현장의 목소리와 과제</h2>
-                <p class="text-gray-400">우리가 해결해야 할 작지만 큰 과제들</p>
+                <p class="text-blue-200">우리가 해결해야 할 작지만 큰 과제들</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 <!-- Challenge 1 -->
-                <div class="bg-gray-700 p-6 rounded-xl text-center">
+                <div class="bg-[#003380] p-6 rounded-xl text-center shadow-lg border border-blue-800">
                     <i class="fa-solid fa-user-xmark text-3xl text-red-400 mb-4"></i>
                     <h4 class="font-bold mb-2">전문 인력 부족</h4>
-                    <p class="text-sm text-gray-300">상근 사서 부족 및 자원봉사 의존도가 높음</p>
+                    <p class="text-sm text-blue-200">상근 사서 부족 및 자원봉사 의존도가 높음</p>
                 </div>
                 <!-- Challenge 2 -->
-                <div class="bg-gray-700 p-6 rounded-xl text-center">
+                <div class="bg-[#003380] p-6 rounded-xl text-center shadow-lg border border-blue-800">
                     <i class="fa-solid fa-layer-group text-3xl text-red-400 mb-4"></i>
                     <h4 class="font-bold mb-2">콘텐츠의 한계</h4>
-                    <p class="text-sm text-gray-300">독서·문화 위주, 디지털·AI 교육 부재</p>
+                    <p class="text-sm text-blue-200">독서·문화 위주, 디지털·AI 교육 부재</p>
                 </div>
                 <!-- Challenge 3 -->
-                <div class="bg-gray-700 p-6 rounded-xl text-center">
+                <div class="bg-[#003380] p-6 rounded-xl text-center shadow-lg border border-blue-800">
                     <i class="fa-solid fa-bullhorn text-3xl text-red-400 mb-4"></i>
                     <h4 class="font-bold mb-2">홍보·브랜딩 약화</h4>
-                    <p class="text-sm text-gray-300">"있지만 잘 모르는 공간"으로 인식</p>
+                    <p class="text-sm text-blue-200">"있지만 잘 모르는 공간"으로 인식</p>
                 </div>
             </div>
 
-            <div class="bg-gray-600 p-6 rounded-xl border-l-4 border-yellow-400">
+            <div class="bg-[#003380] p-6 rounded-xl border-l-4 border-yellow-400 shadow-lg">
                 <h3 class="font-bold text-lg mb-2 text-white">광명시 운영자들이 원하는 것</h3>
-                <p class="text-gray-200 italic mb-4">
+                <p class="text-blue-200 italic mb-4">
                     "제도 개선, 전문성 강화, 그리고..."
                 </p>
-                <div class="text-center bg-gray-800 p-4 rounded-lg">
+                <div class="text-center bg-[#002060] p-4 rounded-lg border border-blue-800">
                     <span class="text-yellow-300 font-bold text-lg">
                         "전문 인력, 협력 네트워크, 차별화된 프로그램을 함께 만들 파트너"
                     </span>
@@ -174,8 +192,9 @@
 
             <!-- Slide 7: Opportunity -->
             <div class="mt-10 text-center">
-                <i class="fa-solid fa-arrow-down text-3xl text-gray-500 mb-4 animate-bounce"></i>
-                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 rounded-2xl shadow-lg">
+                <i class="fa-solid fa-arrow-down text-3xl text-brand-sky mb-4 animate-bounce"></i>
+                <!-- 그라데이션을 브랜드 컬러로 조정 -->
+                <div class="bg-gradient-to-r from-brand-blue to-brand-sky p-6 rounded-2xl shadow-lg">
                     <h3 class="text-xl font-bold mb-2">XR·AI 시대의 새로운 기회</h3>
                     <p>작은도서관이 <strong class="text-yellow-300">"디지털 격차 해소의 전초기지"</strong>가 될 수 있습니다.</p>
                 </div>
@@ -185,61 +204,66 @@
         <!-- Solution & Proposal / Slide 8, 9 -->
         <section class="p-8 md:p-12 bg-white">
             <div class="text-center mb-12">
-                <span class="text-blue-600 font-bold tracking-widest text-sm">SOLUTION</span>
+                <span class="text-brand-blue font-bold tracking-widest text-sm">SOLUTION</span>
                 <h2 class="text-2xl md:text-3xl font-bold section-title text-gray-900 mt-2">작은도서관 XR·AI 허브 모델</h2>
             </div>
 
             <!-- Core Elements -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-blue-50 transition">
-                    <div class="text-blue-600 text-2xl mb-2"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <!-- 아이콘 및 테두리 색상을 브랜드 컬러로 통일 -->
+                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-[#f0f7ff] transition">
+                    <div class="text-brand-blue text-2xl mb-2"><i class="fa-solid fa-chalkboard-user"></i></div>
                     <h4 class="font-bold text-sm">정규/원데이 교육</h4>
                     <p class="text-xs text-gray-500 mt-1">XR·AI·3D 디자인</p>
                 </div>
-                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-blue-50 transition">
-                    <div class="text-blue-600 text-2xl mb-2"><i class="fa-solid fa-user-graduate"></i></div>
+                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-[#f0f7ff] transition">
+                    <div class="text-brand-blue text-2xl mb-2"><i class="fa-solid fa-user-graduate"></i></div>
                     <h4 class="font-bold text-sm">Tech Communicator</h4>
                     <p class="text-xs text-gray-500 mt-1">지역 강사 40시간 양성</p>
                 </div>
-                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-blue-50 transition">
-                    <div class="text-blue-600 text-2xl mb-2"><i class="fa-solid fa-cube"></i></div>
+                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-[#f0f7ff] transition">
+                    <div class="text-brand-blue text-2xl mb-2"><i class="fa-solid fa-cube"></i></div>
                     <h4 class="font-bold text-sm">학습 환경 구축</h4>
                     <p class="text-xs text-gray-500 mt-1">XR기기, 3D프린터 등</p>
                 </div>
-                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-blue-50 transition">
-                    <div class="text-blue-600 text-2xl mb-2"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="border border-blue-100 p-4 rounded-xl text-center hover:bg-[#f0f7ff] transition">
+                    <div class="text-brand-blue text-2xl mb-2"><i class="fa-solid fa-chart-line"></i></div>
                     <h4 class="font-bold text-sm">성과 관리</h4>
                     <p class="text-xs text-gray-500 mt-1">데이터 기반 진로 연계</p>
                 </div>
             </div>
 
             <!-- Detailed Programs (Slide 9) -->
-            <h3 class="text-xl font-bold mb-6 border-l-4 border-blue-600 pl-4">운영 프로그램 상세</h3>
+            <!-- 포인트 컬러를 브랜드 블루로 -->
+            <h3 class="text-xl font-bold mb-6 border-l-4 border-brand-blue pl-4">운영 프로그램 상세</h3>
             <div class="space-y-4">
-                <div class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden">
-                    <div class="bg-blue-600 text-white p-4 md:w-32 flex items-center justify-center font-bold text-center">
+                <!-- 각 항목의 배경색을 파란색 계열 그라데이션으로 변경 -->
+                <div class="flex flex-col md:flex-row bg-[#f0f7ff] rounded-lg overflow-hidden shadow-sm border border-blue-100">
+                    <div class="bg-brand-blue text-white p-4 md:w-32 flex items-center justify-center font-bold text-center">
                         AI<br>교육
                     </div>
                     <div class="p-4 flex-1">
-                        <h4 class="font-bold">다양한 AI 도구와 친해지기</h4>
+                        <h4 class="font-bold text-brand-blue">다양한 AI 도구와 친해지기</h4>
                         <p class="text-sm text-gray-600">남녀노소 모두가 참여 가능한 실습형 교육으로 지역주민의 AI 리터러시 실현</p>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden">
-                    <div class="bg-purple-600 text-white p-4 md:w-32 flex items-center justify-center font-bold text-center">
+                <div class="flex flex-col md:flex-row bg-[#f0f7ff] rounded-lg overflow-hidden shadow-sm border border-blue-100">
+                    <!-- 조금 더 밝은 파란색 (브랜드 스카이) 적용 -->
+                    <div class="bg-[#0077c8] text-white p-4 md:w-32 flex items-center justify-center font-bold text-center">
                         강사<br>양성
                     </div>
                     <div class="p-4 flex-1">
-                        <h4 class="font-bold">Tech Communicator 패키지</h4>
+                        <h4 class="font-bold text-[#0077c8]">Tech Communicator 패키지</h4>
                         <p class="text-sm text-gray-600">운영자·자원봉사자·청년을 지역 디지털 강사로 육성 (매뉴얼·교안 제공)</p>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden">
-                    <div class="bg-teal-600 text-white p-4 md:w-32 flex items-center justify-center font-bold text-center">
+                <div class="flex flex-col md:flex-row bg-[#f0f7ff] rounded-lg overflow-hidden shadow-sm border border-blue-100">
+                    <!-- 가장 밝은 파란색 (브랜드 스카이) 적용 -->
+                    <div class="bg-brand-sky text-white p-4 md:w-32 flex items-center justify-center font-bold text-center">
                         AI<br>입문
                     </div>
                     <div class="p-4 flex-1">
-                        <h4 class="font-bold">AI 활용 입문 과정</h4>
+                        <h4 class="font-bold text-brand-sky">AI 활용 입문 과정</h4>
                         <p class="text-sm text-gray-600">챗GPT, 음성 명령 등 일상 활용 프로젝트 (모듈형 도입 가능)</p>
                     </div>
                 </div>
@@ -247,27 +271,27 @@
         </section>
 
         <!-- Benefits & Collaboration / Slide 10, 11 -->
-        <section class="bg-blue-50 p-8 md:p-12">
+        <section class="bg-[#f0f7ff] p-8 md:p-12">
             <!-- Benefits -->
             <div class="mb-12">
-                <h2 class="text-2xl font-bold text-center mb-8 text-blue-900">작은도서관이 얻는 확실한 'Win'</h2>
+                <h2 class="text-2xl font-bold text-center mb-8 text-brand-blue">작은도서관이 얻는 확실한 'Win'</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-blue-100">
                         <i class="fa-solid fa-star text-yellow-400 text-2xl mb-2"></i>
                         <h4 class="font-bold text-sm">경쟁력 강화</h4>
                         <p class="text-xs text-gray-500">차별화된 정체성</p>
                     </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-blue-100">
                         <i class="fa-solid fa-users-viewfinder text-green-500 text-2xl mb-2"></i>
                         <h4 class="font-bold text-sm">이용자 확대</h4>
                         <p class="text-xs text-gray-500">전 세대 참여</p>
                     </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-blue-100">
                         <i class="fa-solid fa-seedling text-green-600 text-2xl mb-2"></i>
                         <h4 class="font-bold text-sm">인력 내재화</h4>
                         <p class="text-xs text-gray-500">자체 강사 확보</p>
                     </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm text-center">
+                    <div class="bg-white p-4 rounded-xl shadow-sm text-center border border-blue-100">
                         <i class="fa-solid fa-coins text-yellow-500 text-2xl mb-2"></i>
                         <h4 class="font-bold text-sm">재원 다각화</h4>
                         <p class="text-xs text-gray-500">지속가능 구조</p>
@@ -276,9 +300,10 @@
             </div>
 
             <!-- Collaboration Model -->
-            <div class="bg-white rounded-3xl p-8 shadow-md relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-400 via-blue-500 to-indigo-600"></div>
-                <h3 class="text-xl font-bold text-center mb-8">함께 움직이는 협력 구조</h3>
+            <div class="bg-white rounded-3xl p-8 shadow-md relative overflow-hidden border border-blue-100">
+                <!-- 상단 그라데이션 바를 브랜드 컬러로 -->
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-blue via-[#0077c8] to-brand-sky"></div>
+                <h3 class="text-xl font-bold text-center mb-8 text-brand-blue">함께 움직이는 협력 구조</h3>
                 
                 <div class="flex flex-col md:flex-row justify-between items-start gap-6">
                     <!-- Council -->
@@ -292,48 +317,51 @@
                     </div>
 
                     <!-- Arrow Mobile: Down, Desktop: Right -->
-                    <div class="hidden md:block self-center text-gray-300"><i class="fa-solid fa-chevron-right text-2xl"></i></div>
+                    <div class="hidden md:block self-center text-brand-sky opacity-50"><i class="fa-solid fa-chevron-right text-2xl"></i></div>
 
                     <!-- Library -->
                     <div class="flex-1 text-center group">
-                        <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-3 group-hover:bg-blue-200 transition">
+                        <!-- 브랜드 컬러 적용 -->
+                        <div class="w-16 h-16 mx-auto bg-[#dbeafe] rounded-full flex items-center justify-center text-brand-blue mb-3 group-hover:bg-blue-200 transition">
                             <i class="fa-solid fa-school text-2xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg mb-2">각 작은도서관</h4>
+                        <h4 class="font-bold text-lg mb-2 text-brand-blue">각 작은도서관</h4>
                         <p class="text-sm text-gray-600">공간 제공 및 관리<br>주민 모집·홍보<br>현장 피드백</p>
-                        <div class="mt-2 text-xs font-bold text-blue-500">"공간/커뮤니티"</div>
+                        <div class="mt-2 text-xs font-bold text-brand-blue">"공간/커뮤니티"</div>
                     </div>
 
                     <!-- Arrow Mobile: Down, Desktop: Right -->
-                    <div class="hidden md:block self-center text-gray-300"><i class="fa-solid fa-chevron-right text-2xl"></i></div>
+                    <div class="hidden md:block self-center text-brand-sky opacity-50"><i class="fa-solid fa-chevron-right text-2xl"></i></div>
 
                     <!-- Company -->
                     <div class="flex-1 text-center group">
-                        <div class="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-3 group-hover:bg-indigo-200 transition">
+                        <!-- 브랜드 스카이 컬러 적용 -->
+                        <div class="w-16 h-16 mx-auto bg-[#e0f2fe] rounded-full flex items-center justify-center text-brand-sky mb-3 group-hover:bg-sky-200 transition">
                             <i class="fa-solid fa-laptop-code text-2xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg mb-2">㈜파란두루미</h4>
+                        <h4 class="font-bold text-lg mb-2 text-brand-sky">㈜파란두루미</h4>
                         <p class="text-sm text-gray-600">프로그램·교안 개발<br>강사 양성/멘토링<br>환경 구축 자문</p>
-                        <div class="mt-2 text-xs font-bold text-indigo-500">"콘텐츠/기술"</div>
+                        <div class="mt-2 text-xs font-bold text-brand-sky">"콘텐츠/기술"</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Roadmap / Slide 12 -->
-        <section class="p-8 md:p-12">
-            <h2 class="text-2xl font-bold text-center mb-10">작게 시작해서 크게 확산하는 로드맵</h2>
+        <section class="p-8 md:p-12 bg-white">
+            <h2 class="text-2xl font-bold text-center mb-10 section-title text-gray-900">작게 시작해서 크게 확산하는 로드맵</h2>
             <div class="relative">
                 <!-- Vertical Line -->
                 <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-blue-100 transform -translate-x-1/2"></div>
 
                 <!-- Step 1 -->
                 <div class="relative z-10 mb-8 flex flex-col md:flex-row items-center w-full">
-                    <div class="order-1 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold md:absolute md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-white shadow">1</div>
+                    <!-- 브랜드 블루 적용 -->
+                    <div class="order-1 w-8 h-8 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold md:absolute md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-white shadow-md">1</div>
                     <div class="order-2 md:w-1/2 md:pr-8 pl-12 md:pl-0 md:text-right w-full">
-                        <h3 class="font-bold text-lg text-blue-800">1단계 (1년차)</h3>
-                        <p class="font-medium mb-1">시범 도서관 3~5곳</p>
-                        <div class="bg-white p-3 rounded shadow-sm inline-block text-sm text-gray-600 border border-gray-100">
+                        <h3 class="font-bold text-lg text-brand-blue">1단계 (1년차)</h3>
+                        <p class="font-medium mb-1 text-gray-700">시범 도서관 3~5곳</p>
+                        <div class="bg-white p-3 rounded-lg shadow-sm inline-block text-sm text-gray-600 border border-blue-100">
                             XR·AI 교육 최소 연 ○회<br>Tech Communicator ○명 양성<br>성과 공유회 개최
                         </div>
                     </div>
@@ -342,24 +370,26 @@
 
                 <!-- Step 2 -->
                 <div class="relative z-10 mb-8 flex flex-col md:flex-row items-center w-full">
-                    <div class="order-1 w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center text-white font-bold md:absolute md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-white shadow">2</div>
+                    <!-- 중간 파란색 적용 -->
+                    <div class="order-1 w-8 h-8 bg-[#0077c8] rounded-full flex items-center justify-center text-white font-bold md:absolute md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-white shadow-md">2</div>
                     <div class="order-2 md:w-1/2 md:pr-8 hidden md:block"></div>
                     <div class="order-3 md:w-1/2 md:pl-8 pl-12 w-full">
-                        <h3 class="font-bold text-lg text-indigo-800">2단계 (2년차)</h3>
-                        <p class="font-medium mb-1">10개 이상 확산</p>
-                        <div class="bg-white p-3 rounded shadow-sm inline-block text-sm text-gray-600 border border-gray-100">
-                            광명형 모델 매뉴얼화<br>CSR/공모 연계 예산 확대<br>데이터 기반 모델 보완
+                        <h3 class="font-bold text-lg text-[#0077c8]">2단계 (2년차)</h3>
+                        <p class="font-medium mb-1 text-gray-700">10개 이상 확산</p>
+                        <div class="bg-white p-3 rounded-lg shadow-sm inline-block text-sm text-gray-600 border border-blue-100">
+                            광명형 모델 매뉴얼화<br>CSV/공모 연계 예산 확대<br>데이터 기반 모델 보완
                         </div>
                     </div>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="relative z-10 flex flex-col md:flex-row items-center w-full">
-                    <div class="order-1 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold md:absolute md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-white shadow">3</div>
+                    <!-- 브랜드 스카이 적용 -->
+                    <div class="order-1 w-8 h-8 bg-brand-sky rounded-full flex items-center justify-center text-white font-bold md:absolute md:left-1/2 md:transform md:-translate-x-1/2 border-4 border-white shadow-md">3</div>
                     <div class="order-2 md:w-1/2 md:pr-8 pl-12 md:pl-0 md:text-right w-full">
-                        <h3 class="font-bold text-lg text-purple-800">3단계 (3년차)</h3>
-                        <p class="font-medium mb-1">광명 전역 & 인접 도시</p>
-                        <div class="bg-white p-3 rounded shadow-sm inline-block text-sm text-gray-600 border border-gray-100">
+                        <h3 class="font-bold text-lg text-brand-sky">3단계 (3년차)</h3>
+                        <p class="font-medium mb-1 text-gray-700">광명 전역 & 인접 도시</p>
+                        <div class="bg-white p-3 rounded-lg shadow-sm inline-block text-sm text-gray-600 border border-blue-100">
                             네트워크 확장<br>지속 가능한 교육 생태계<br>인근 지자체 전파
                         </div>
                     </div>
@@ -369,35 +399,47 @@
         </section>
 
         <!-- Summary & Footer / Slide 13 -->
-        <footer class="bg-gray-900 text-white p-10 md:p-16">
-            <div class="max-w-3xl mx-auto text-center">
-                <i class="fa-solid fa-quote-left text-3xl text-gray-600 mb-4"></i>
-                <h2 class="text-2xl font-bold mb-6">
-                    광명시 작은도서관이 주인공이 되고,<br>
-                    <span class="text-blue-400">파란두루미</span>는 이를 돕는 파트너가 되겠습니다.
+        <!-- 배경색을 로고의 짙은 파란색으로 변경 -->
+        <footer class="bg-[#002060] text-white p-10 md:p-16 relative overflow-hidden">
+            <!-- 배경에 은은한 로고 패턴 추가 (옵션) -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                <img src="parandurume-logo-2x2.png" alt="" class="w-96 absolute -top-20 -right-20 transform rotate-12">
+            </div>
+
+            <div class="max-w-3xl mx-auto text-center relative z-10">
+                <!-- 캐릭터 배치 -->
+                <img src="Gemini_Generated_Image_7ayukl7ayukl7ayu.jpg" alt="파란두루미 캐릭터" class="w-32 md:w-40 mx-auto mb-6 rounded-full border-4 border-brand-sky shadow-lg">
+
+                <i class="fa-solid fa-quote-left text-3xl text-brand-sky mb-4"></i>
+                <h2 class="text-2xl font-bold mb-6 leading-snug">
+                    광명시와 광명시 작은도서관이 주인공이 되고,<br>
+                    <span class="text-yellow-300">진정한 사회적경제를 실현</span>하는 사업이 필요합니다!
                 </h2>
                 
-                <div class="bg-gray-800 rounded-xl p-8 text-left border border-gray-700">
-                    <h3 class="font-bold text-yellow-400 mb-4 border-b border-gray-600 pb-2">협의회와 논의하고 싶은 핵심 질문</h3>
-                    <ul class="space-y-4 text-sm md:text-base text-gray-300">
+                <div class="bg-[#003380] rounded-xl p-8 text-left border border-blue-800 shadow-lg">
+                    <h3 class="font-bold text-yellow-400 mb-4 border-b border-blue-700 pb-2">협의회와 논의하고 싶은 핵심 질문</h3>
+                    <ul class="space-y-4 text-sm md:text-base text-blue-200">
                         <li class="flex items-start">
-                            <i class="fa-solid fa-question-circle mt-1 mr-3 text-blue-400"></i>
+                            <i class="fa-solid fa-question-circle mt-1 mr-3 text-brand-sky"></i>
                             시범 도서관 선정 시, 협의회가 가장 중요하게 생각하는 기준은?
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-question-circle mt-1 mr-3 text-blue-400"></i>
+                            <i class="fa-solid fa-question-circle mt-1 mr-3 text-brand-sky"></i>
                             운영자·자원봉사자 교육(Tech Communicator)의 효과적인 추진 방식은?
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-question-circle mt-1 mr-3 text-blue-400"></i>
-                            광명시·경기도·CSR과 연계한 재원 구조에 대한 아이디어는?
+                            <i class="fa-solid fa-question-circle mt-1 mr-3 text-brand-sky"></i>
+                            광명시·경기도·CSV와 연계한 재원 구조에 대한 아이디어는?
                         </li>
                     </ul>
                 </div>
 
-                <div class="mt-12 text-gray-500 text-sm">
-                    © 2024 Parandurumi Corp. All rights reserved.<br>
-                    이 문서는 ㈜파란두루미의 제안 자료를 바탕으로 생성된 인포그래픽입니다.
+                <div class="mt-12 text-blue-300 text-sm flex flex-col items-center">
+                    <img src="parandurume-logo-2x2.png" alt="파란두루미(주) 로고" class="w-24 mb-4 opacity-70 grayscale hover:grayscale-0 transition">
+                    <p>
+                        © 2024 Parandurumi Corp. All rights reserved.<br>
+                        이 문서는 ㈜파란두루미의 제안 자료를 바탕으로 생성된 인포그래픽입니다.
+                    </p>
                 </div>
             </div>
         </footer>
@@ -405,7 +447,8 @@
 
     <!-- Print Button (Visible only on screen) -->
     <div class="fixed bottom-6 right-6 no-print">
-        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center transition-all transform hover:scale-105">
+        <!-- 버튼 색상도 브랜드 컬러로 -->
+        <button onclick="window.print()" class="bg-brand-blue hover:bg-[#003380] text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center transition-all transform hover:scale-105 border-2 border-brand-sky">
             <i class="fa-solid fa-print mr-2"></i> 인쇄 / PDF 저장
         </button>
     </div>
