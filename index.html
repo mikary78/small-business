@@ -157,6 +157,7 @@
                 <p class="text-blue-200">우리가 해결해야 할 작지만 큰 과제들</p>
             </div>
 
+<!-- ... existing code (Challenge boxes) ... -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 <!-- Challenge 1 -->
                 <div class="bg-[#003380] p-6 rounded-xl text-center shadow-lg border border-blue-800">
@@ -178,7 +179,7 @@
                 </div>
             </div>
 
-            <div class="bg-[#003380] p-6 rounded-xl border-l-4 border-yellow-400 shadow-lg">
+            <div class="bg-[#003380] p-6 rounded-xl border-l-4 border-yellow-400 shadow-lg mb-12">
                 <h3 class="font-bold text-lg mb-2 text-white">광명시 운영자들이 원하는 것</h3>
                 <p class="text-blue-200 italic mb-4">
                     "제도 개선, 전문성 강화, 그리고..."
@@ -190,13 +191,72 @@
                 </div>
             </div>
 
-            <!-- Slide 7: Opportunity -->
-            <div class="mt-10 text-center">
-                <i class="fa-solid fa-arrow-down text-3xl text-brand-sky mb-4 animate-bounce"></i>
-                <!-- 그라데이션을 브랜드 컬러로 조정 -->
-                <div class="bg-gradient-to-r from-brand-blue to-brand-sky p-6 rounded-2xl shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">XR·AI 시대의 새로운 기회</h3>
-                    <p>작은도서관이 <strong class="text-yellow-300">"디지털 격차 해소의 전초기지"</strong>가 될 수 있습니다.</p>
+            <!-- New Section: The Urgent Future (Humanoid Era & Social Economy) -->
+            <div class="relative border-t border-blue-800 pt-12">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-[#002060] px-4">
+                    <span class="text-brand-sky font-bold tracking-widest text-sm uppercase"><i class="fa-solid fa-triangle-exclamation mr-2"></i>긴급 제언</span>
+                </div>
+                
+                <h2 class="text-2xl md:text-3xl font-bold text-center text-white mb-8 leading-tight">
+                    더 이상 미룰 수 없는 미래:<br>
+                    <span class="text-yellow-400">휴머노이드 시대의 도래와 사회적경제</span>
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-10">
+                    <!-- Left: The Shock (Stats Visual) -->
+                    <div class="bg-[#001540] p-6 rounded-2xl border border-blue-700 relative overflow-hidden">
+                         <!-- Background Icon -->
+                        <i class="fa-solid fa-robot text-9xl absolute -bottom-10 -right-10 text-blue-900 opacity-20"></i>
+                        
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                            <span class="bg-red-500 text-white text-xs px-2 py-1 rounded mr-2 animate-pulse">충격 전망</span>
+                            앞으로 3~5년 내
+                        </h3>
+                        
+                        <div class="flex items-center justify-around text-center">
+                            <div class="opacity-60 grayscale">
+                                <i class="fa-solid fa-car-side text-5xl text-blue-400 mb-2"></i>
+                                <p class="text-sm text-blue-300">자동차 수</p>
+                            </div>
+                            <div class="text-3xl font-black text-yellow-400"><i class="fa-solid fa-less-than"></i></div>
+                            <div class="transform scale-110">
+                                <i class="fa-solid fa-robot text-6xl text-brand-sky mb-2 filter drop-shadow-[0_0_10px_rgba(0,163,224,0.5)]"></i>
+                                <p class="font-bold text-white">휴머노이드 로봇 수</p>
+                            </div>
+                        </div>
+                        <p class="text-center text-blue-200 text-sm mt-6 bg-[#002060] p-2 rounded">
+                            *단순한 기술 변화가 아닌, 인류사적 전환점
+                        </p>
+                    </div>
+
+                    <!-- Right: The Impact & Need for Social Economy -->
+                    <div class="space-y-6">
+                        <div class="bg-[#003380] p-5 rounded-xl border-l-4 border-red-400">
+                            <h4 class="font-bold text-lg text-white mb-2"><i class="fa-solid fa-bolt text-red-400 mr-2"></i>불가피한 혼란과 격차</h4>
+                            <p class="text-blue-200 text-sm leading-relaxed">
+                                노동 환경의 급변, 경제 구조의 재편으로 인한 사회적 혼란이 야기되고 있습니다. 준비되지 않은 자들에게 디지털/AI 격차는 생존의 문제가 됩니다.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-[#003380] p-5 rounded-xl border-l-4 border-brand-sky">
+                            <h4 class="font-bold text-lg text-white mb-2"><i class="fa-solid fa-hand-holding-heart text-brand-sky mr-2"></i>왜 '사회적경제'인가?</h4>
+                            <p class="text-blue-200 text-sm leading-relaxed">
+                                시장 경제만으로는 이 거대한 파고를 넘을 수 없습니다. 오히려 <strong>연대와 협력</strong>을 바탕으로 한 사회적경제가 더 활성화되어야 할 시점입니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conclusion: The Role of Small Libraries -->
+                <div class="bg-gradient-to-r from-brand-blue to-brand-sky p-6 rounded-2xl shadow-lg text-center transform hover:scale-[1.02] transition-all">
+                    <h3 class="text-xl font-bold mb-4">진정한 사회적경제 실현의 최적지 = <span class="text-yellow-300 underline decoration-4 underline-offset-4">작은도서관</span></h3>
+                    <p class="text-white text-opacity-90 mb-4 leading-relaxed">
+                        가장 가까운 곳에서 주민들이 기술을 배우고, 서로를 돌보며, 새로운 가치를 만들어내는 
+                        <strong>'디지털 시민 연대의 거점'</strong>이 되어야 합니다.
+                    </p>
+                    <div class="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-bold">
+                        이것이 광명시 작은도서관이 XR·AI 허브로 도약해야 하는 진짜 이유입니다.
+                    </div>
                 </div>
             </div>
         </section>
@@ -362,7 +422,7 @@
                         <h3 class="font-bold text-lg text-brand-blue">1단계 (1년차)</h3>
                         <p class="font-medium mb-1 text-gray-700">시범 도서관 3~5곳</p>
                         <div class="bg-white p-3 rounded-lg shadow-sm inline-block text-sm text-gray-600 border border-blue-100">
-                            XR·AI 교육 최소 연 ○회<br>Tech Communicator ○명 양성<br>성과 공유회 개최
+                            XR·AI 교육 최소 연 00회<br>Tech Docent 00명 양성<br>성과 공유회 개최
                         </div>
                     </div>
                     <div class="order-3 md:w-1/2 md:pl-8 hidden md:block"></div>
@@ -425,7 +485,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fa-solid fa-question-circle mt-1 mr-3 text-brand-sky"></i>
-                            운영자·자원봉사자 교육(Tech Communicator)의 효과적인 추진 방식은?
+                            운영자·자원봉사자 교육(Tech Docent)의 효과적인 추진 방식은?
                         </li>
                         <li class="flex items-start">
                             <i class="fa-solid fa-question-circle mt-1 mr-3 text-brand-sky"></i>
@@ -437,7 +497,7 @@
                 <div class="mt-12 text-blue-300 text-sm flex flex-col items-center">
                     <img src="parandurume-logo-2x2.png" alt="파란두루미(주) 로고" class="w-24 mb-4 opacity-70 grayscale hover:grayscale-0 transition">
                     <p>
-                        © 2024 Parandurumi Corp. All rights reserved.<br>
+                        © 2025 Parandurume Inc. All rights reserved.<br>
                         이 문서는 ㈜파란두루미의 제안 자료를 바탕으로 생성된 인포그래픽입니다.
                     </p>
                 </div>
